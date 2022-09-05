@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="pokemon"
-    class="flex w-48 m-auto bg-blue-200 mt-4 shadow-2xl justify-center flex-col items-center"
+    class="flex w-64 m-auto bg-blue-200 mt-4 shadow-2xl justify-center flex-col items-center"
   >
     <h1 class="text-4xl text-blue-600 flex justify-center uppercase">
       {{ pokemon.name.toUpperCase() }}
