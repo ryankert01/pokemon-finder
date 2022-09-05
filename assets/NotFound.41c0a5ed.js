@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as o}from"./index.dd0744a9.js";const c={},n={class:"flex justify-center text-5xl"};function s(r,_){return t(),o("h1",n,"404 Not Found!")}const f=e(c,[["render",s]]);export{f as default};
