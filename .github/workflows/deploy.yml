@@ -1,23 +1,27 @@
 name: Deploy
 
 on:
-  push: - main
-  pull_request: - main
+  push: 
+    branches:
+      - main
+  pull_request: 
+    branches:
+      - main
 
 jobs:
   build:
-    run-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: install Dependencies
-      run: npm i
-    - name: Generate
-      run: npm run build
-    - name: Github Page Deploy
-      use: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install Dependencies
+        run: npm i
+      - name: Generate
+        run: npm run build
+      - name: Github Page Deploy
+        use: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
